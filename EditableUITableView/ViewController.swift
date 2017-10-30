@@ -5,6 +5,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var dataSource = ["row1", "row2", "row3", "row4", "row5", "row6", "row7", "row8", "row9", "row10", "row11", "row12", "row13", "row14", "row15", "row16"]
     
+    var pressedTracking: [String:String] = [:]
+    
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -17,7 +19,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.updateButton(text: dataSource[indexPath.row])
         
+        cell.cellButton.addTarget(self, action:#selector(ViewController.clickMe(sender:)), for: .touchDown)
+        
         return cell
+    }
+    
+    @objc func clickMe(sender:UIButton!){
+        sender.setTitle("Clicked", for: .normal)
     }
     
     
