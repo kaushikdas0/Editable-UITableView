@@ -1,10 +1,4 @@
-//
-//  AppDelegate.swift
-//  EditableUITableView
-//
-//  Created by Kaushik Das on 25/10/17.
-//  Copyright © 2017 Kaushik Das. All rights reserved.
-//
+
 
 import UIKit
 
